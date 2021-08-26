@@ -1,102 +1,14 @@
 from collections import OrderedDict
 
 global cusid 
-cusid = 230001
-
-def Home():
-    print("""
-    Restaurant Management System
-
-    0.Exit
-    1. Food Menu
-    2. Order Food
-    3. Delivery
-    4. Feedback
-    """)
-
-    global user_input
-    user_input = int(input("Please select a number : "))
-
-def FoodMenu():
-    print("""
-    Food Menu
-
-    0.Exit
-    1. Price in increasing order
-    2. Price in decreasing order
-    """)
-
-    foodMenu = {
-        '25' : 'Water',
-        '35' : 'Cola',
-        '80' : 'Sandwitch',
-        '90' : 'Milkshake', 
-        '100' : 'Burger',
-        '100' : 'Lassi',
-        '120' : 'Pizaa',
-        '150' : 'Rice',
-        '200' : 'Chicken',
-        '350' : 'Biriyani'  
-    }
-
-    sortedfoodMenu = OrderedDict(foodMenu)
-
-    option = int(input("Please enter a number : "))
-
-    if option == 0:
-        exit
-    elif option == 1:
-        for k, v in sortedfoodMenu.items():  
-            print(k, v)
-    elif option == 2:
-        for k, v in reversed(sortedfoodMenu.items()):  
-            print(k, v)
-    else:
-        print('Please restart & enter a valid value')
-
-
-def OrderMenu():
-    global num
-    print("""
-    Order Menu
-
-    0.Exit
-    1. New Order
-    2. View Order
-    """)
-
-    option = int(input("Please select a number : "))
-
-    if option == 0:
-        exit
-    elif option == 1:
-        FoodMenu()
-        print('''
-        1. Special Order
-        2. Regular Order
-        ''')
-    elif option == 2:
-        print("Please Order First!!!")
-    else:
-        print('Please restart & enter a valid value')
-    
-
-    option = int(input("Please select a number : "))
-
-    if option == 0:
-        print(f'Special Order Confirmed {cusid}')
-    elif option == 1:
-        print(f"Regular Order Confirmed from customer {cusid}")
-    else:
-        print('Please restart & enter a valid value')
-
+cusid = 100001
 
 def Delivery():
     print("""
-    Delivery
+Delivery Menu
 
-    0.Exit
-    1. Confirm
+    Press 0 for Exit
+    Press 1 for Confirm
     """)
 
     option = int(input("Please select a number : "))
@@ -106,14 +18,15 @@ def Delivery():
     elif option == 1:
         print(f"Order confirmed from user {cusid}")
     else:
-            print('Please restart & enter a valid value')
+        print('Wrong Choice!!!')
+        print('Please, restart the program')
 
 def Feedback():
     print("""
-    Feedback
+Feedback Menu
 
-    0.Exit
-    1. Review Us
+    Press 0 for Exit
+    Press 1 for Review Us
     """)
 
     option = int(input("Please select a number : "))
@@ -130,22 +43,112 @@ def Feedback():
         5. Excellent
         ''')
     else:
-        print('Please restart & enter a valid value')
+        print('Wrong Choice!!!')
+        print('Please, restart the program')
 
-    user_input = int(input('Please give us a review -> '))
+    user_input = int(input('Give us a review -> '))
 
     if user_input == 5:
-        print(f'Thank you for 5 star review, customer {cusid}')
+        print(f'Received 5 star review from customer {cusid}')
     elif user_input == 1:
-        print(f'Thank you for 1 star review, customer {cusid}')
+        print(f'Received 1 star review from customer {cusid}')
     elif user_input == 2:
-        print(f'Thank you for 2 star review, customer {cusid}')
+        print(f'Received 2 star review from customer {cusid}')
     elif user_input == 3:
-        print(f'Thank you for 3 star review, customer {cusid}')
+        print(f'Received 3 star review from customer {cusid}')
     elif user_input == 4:
-        print(f'Thank you for 4 star review, customer {cusid}')
+        print(f'Received 4 star review from customer {cusid}')
     else:
         print('Please restart & enter a valid value')
+
+def Home():
+    print("""
+Restaurant Management System
+
+    Press 0 for Exit
+    Press 1 for Food Menu
+    Press 2 for Order Food
+    Press 3 for Delivery
+    Press 4 for Feedback
+    """)
+
+    global user_input
+    user_input = int(input("Please select a number : "))
+
+def FoodMenu():
+    print("""
+Food Menu
+
+    Press 0 for Exit
+    Press 1 for Price in accending order
+    Press 2 for Price in decending order
+    """)
+
+    foodMenu = {
+        '25' : 'Water',
+        '40' : 'Pepsi',
+        '60' : 'French Fries',
+        '70' : 'Egg Turt',
+        '90' : 'Chicken Fry',
+        '110' : 'Nachos',
+        '120' : 'Bubble Tea',
+        '140' : 'Chicken Nugget',
+        '180' : 'Chao Min',
+        '250' : 'Burger'               
+    }
+
+    sortedfoodMenu = OrderedDict(foodMenu)
+
+    option = int(input("Please enter a number : "))
+
+    if option == 0:
+        exit
+    elif option == 1:
+        for k, v in sortedfoodMenu.items():  
+            print(v, '---', k)
+    elif option == 2:
+        for k, v in reversed(sortedfoodMenu.items()):  
+            print(v, '---', k)
+    else:
+        print('Wrong Choice!!!')
+        print('Please, restart the program')
+
+
+def OrderMenu():
+    global num
+    print("""
+Order Menu
+
+    Press 0 for Exit
+    Press 1 for New Order
+    Press 2 for View Order
+    """)
+
+    option = int(input("Please select a number : "))
+
+    if option == 0:
+        exit
+    elif option == 1:
+        FoodMenu()
+        print('''
+        Press 1 for Special Order
+        Press 2 for Regular Order
+        ''')
+    elif option == 2:
+        print("Please Order First!!!")
+    else:
+        print('Please restart & enter a valid value')
+    
+    option = int(input("Please select a number : "))
+
+    if option == 0:
+        print(f'Special Order Confirmed {cusid}')
+    elif option == 1:
+        print(f"Regular Order Confirmed from customer {cusid}")
+    else:
+        print('Wrong Choice!!!')
+        print('Please, restart the program')
+
 
 Home()
 
@@ -160,6 +163,5 @@ elif user_input == 3:
 elif user_input == 4:
     Feedback()
 else:
-    print('You have entered a chosen a wrong option')
-    print('Please restart the program')
-
+    print('Wrong Choice!!!')
+    print('Please, restart the program')
